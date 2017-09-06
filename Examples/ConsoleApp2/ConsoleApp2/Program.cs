@@ -35,6 +35,7 @@ namespace HelloWorld
             Console.ReadKey();
             */
 
+            /*
             Console.WriteLine("\n\n*****************************************************");
             Console.WriteLine("*******    Variables Implicitas/Explicitas    *******");
             Console.WriteLine("*****************************************************\n");
@@ -53,6 +54,38 @@ namespace HelloWorld
             double b = 5d; //d final para especificar el tipo int(double);
             double c = 0.5; //no se pone nada y es de tipo float(double);
             Console.WriteLine("La suma de b + c es: {0} + {1} = {2}", b, c, b + c);
+            Console.ReadKey();
+            */
+
+            Console.WriteLine("\n\n*****************************************************");
+            Console.WriteLine("*******          Variables Booleanas          *******");
+            Console.WriteLine("*****************************************************\n");
+
+            char answer = 'n';
+            bool stop = false;
+            int num = 0;
+            bool isTrue = true;
+
+            while (!stop)
+            {
+                Console.Write("Introduzca un número para probar suerte: ");
+                num = int.Parse(Console.ReadLine());
+                isTrue = (num > 10 && num < 12);
+
+                if (!isTrue)
+                {
+                    Console.Write("Lo siento, no ha acertado, ¿desea probar otra vez? (s/n): ");
+                    answer = char.Parse(Console.ReadLine());
+
+                    if (answer == 'n') { stop = true; } else { stop = false; }
+                }
+                else
+                {
+                    Console.WriteLine("!Enhorabuena, has ganado!");
+                    stop = true;
+                }
+            }
+
             Console.ReadKey();
         }
     }
