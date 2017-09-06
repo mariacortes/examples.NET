@@ -43,6 +43,16 @@ namespace HelloWorld
             var suma = x + y;
             Console.WriteLine("La suma de x + y es: {0} + {1} = {2}", x, y, suma);
             Console.WriteLine("El producto de x * y es: {0} * {1} = {2}", x, y, x * y);
+            //Console.ReadKey();
+
+            Console.WriteLine("\n\n*****************************************************");
+            Console.WriteLine("*******          Variables Flotantes          *******");
+            Console.WriteLine("*****************************************************\n");
+            float a = 0.5f; //f final para especificar el tipo float.
+
+            double b = 5d; //d final para especificar el tipo int(double);
+            double c = 0.5; //no se pone nada y es de tipo float(double);
+            Console.WriteLine("La suma de b + c es: {0} + {1} = {2}", b, c, b + c);
             Console.ReadKey();
         }
     }
