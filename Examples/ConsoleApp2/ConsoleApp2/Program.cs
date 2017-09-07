@@ -64,29 +64,58 @@ namespace HelloWorld
             char answer = 'n';
             bool stop = false;
             int num = 0;
+            bool isExcept = false;
             bool isTrue = true;
+            bool isChar = false;
+            bool isInt = false;
 
             while (!stop)
             {
-                Console.Write("Introduzca un número para probar suerte: ");
-                num = int.Parse(Console.ReadLine());
-                isTrue = (num > 10 && num < 12);
-
-                if (!isTrue)
+                if (!isExcept)
                 {
-                    Console.Write("Lo siento, no ha acertado, ¿desea probar otra vez? (s/n): ");
-                    answer = char.Parse(Console.ReadLine());
-
-                    if (answer == 'n') { stop = true; } else { stop = false; }
+                    Console.Write("Introduzca un número para probar suerte: ");
+                    isInt = Int32.TryParse(Console.ReadLine(), out num);
+                    isTrue = (num == 11);
                 }
-                else
+
+                if (!isTrue || isExcept)
+                {
+                    if (isExcept)
+                    {
+                        Console.Write("{0} no es una opción, introduzca s/n: ", answer);
+                        isChar = char.TryParse(Console.ReadLine(), out answer);
+                        isExcept = false;
+                    } 
+                    else if (!isExcept)
+                    {
+                        Console.Write("Lo siento, no ha acertado, ¿desea probar otra vez? (s/n): ");
+                        isChar = char.TryParse(Console.ReadLine(), out answer);
+                    }
+                    else { }
+
+                    if (answer == 'n')
+                    {
+                        stop = true;
+                        Console.ReadKey();
+                    }
+                    else if (answer == 's')
+                    {
+                        stop = false;
+                    }
+                    else
+                    {
+                        isExcept = true;
+                        stop = false;
+                    }
+                }
+                else if (isTrue)
                 {
                     Console.WriteLine("!Enhorabuena, has ganado!");
                     stop = true;
+                    Console.ReadKey();
                 }
+                else { }
             }
-
-            Console.ReadKey();
         }
     }
 }
