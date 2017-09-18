@@ -119,10 +119,21 @@ namespace HelloWorld
             }
             */
 
+            /* 
+             * Empleado 
+             * 
             Empleado empleado1 = new Empleado();
             empleado1.InsertarDatos();
             empleado1.ImprimirEmpleado();
             empleado1.PagarImpuesto();
+            Console.ReadKey();
+            */
+
+            VectorElements vectorElem1 = new VectorElements();
+            vectorElem1.InsertVector();
+            vectorElem1.AcumulatedVector();
+            vectorElem1.GreatherThan36Vector();
+            vectorElem1.QuantityGratherThan50Vector();
             Console.ReadKey();
         }
     }
