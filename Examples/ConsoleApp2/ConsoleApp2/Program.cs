@@ -57,6 +57,7 @@ namespace HelloWorld
             Console.ReadKey();
             */
 
+            /*
             Console.WriteLine("\n\n*****************************************************");
             Console.WriteLine("*******          Variables Booleanas          *******");
             Console.WriteLine("*****************************************************\n");
@@ -116,6 +117,13 @@ namespace HelloWorld
                 }
                 else { }
             }
+            */
+
+            Empleado empleado1 = new Empleado();
+            empleado1.InsertarDatos();
+            empleado1.ImprimirEmpleado();
+            empleado1.PagarImpuesto();
+            Console.ReadKey();
         }
     }
 }
