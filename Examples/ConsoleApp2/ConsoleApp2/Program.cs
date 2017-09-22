@@ -129,11 +129,19 @@ namespace HelloWorld
             Console.ReadKey();
             */
 
+            /*
+             * VectorElements
+             * 
             VectorElements vectorElem1 = new VectorElements();
             vectorElem1.InsertVector();
             vectorElem1.AcumulatedVector();
             vectorElem1.GreatherThan36Vector();
             vectorElem1.QuantityGratherThan50Vector();
+            Console.ReadKey();
+            */
+
+            Club club = new Club();
+            club.PrintGreaterYearsPartner();
             Console.ReadKey();
         }
     }
